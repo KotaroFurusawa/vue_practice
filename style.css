@@ -1,0 +1,38 @@
+.result {
+    position: relative;
+    margin: 10px auto;
+}
+
+.result .res {
+    position: absolute;
+    left: 50%;
+    top: 0;
+    transform: translateX(-50%);
+}
+
+/*変化時間*/
+.trans-enter-active,
+.trans-leave-active {
+    transition: all .5s;
+}
+
+.trans-enter-to,
+/*新しい要素の最後の状態*/
+.trans-leave
+
+/*古い要素の最初の状態*/
+    {
+    opacity: 1;
+}
+
+/*新しい要素の最初の状態*/
+.trans-enter {
+    opacity: 0;
+    transform: translate(-50%, 10px) !important;
+}
+
+/*古い要素の最後の状態*/
+.trans-leave-to {
+    opacity: 0;
+    transform: translate(-50%, -10px) !important;
+}

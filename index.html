@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="jp">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <title>vue練習</title>
+</head>
+
+<body>
+    <div id="demo">
+        <p class="title">zipcode to address demo</p>
+        <input v-model="inputZip" v-bind:placeholder="defaultZip" v-on:keypress.enter="getAddress(computedZip)"
+            maxlength="7">
+        <!--v-model:この入力ボックスの中身をVueのdataの中にある「inputZip」と対応-->
+        <!--v-bind:もともとあるHTML要素の属性をVueと紐付け-->
+        <!--enterをクリックしたとき，getAddress(computedZip)を実行-->
+        <button @click="getAddress(computedZip)">boom</button>
+        <!--@clickは「v-on:click」の短縮形-->
+        <div class="result">
+            <transition name="trans">
+                <!--transitionはvue独自のタグ-->
+                <!--内側の「要素」が変更されると指定したアニメーションを実行-->
+                <p class="res" :key="results">{{results}}</p>
+            </transition>
+            <!--フィルタ：{{zip|filterZip}}-->
+            <!--zipというデータに、filterZipというフィルターをかけて出力-->
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.0/axios.min.js"></script>
+    <script type="text/javascript" src="index.js"></script>
+</body>
+
+</html>
